@@ -1,20 +1,28 @@
-// loginLogic.ts
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import type { SubmitHandler } from "react-hook-form";
+import { data } from "react-router-dom";
+import {email, z} from "zod"
 
-export const formSchema = z.object({
-  email: z.email("Invalid email"),
-  password: z
+
+export const loginSchema = z.object({
+  email:z.email({ message: "Please enter a valid email address" }),
+   password: z
     .string()
-    .min(8, { message: "At least 8 characters" })
-    .refine((p) => /[A-Z]/.test(p), {
-      message: "Must contain an uppercase letter",
+    .min(8, { message: "Must be at least 8 characters" })
+    .refine((val) => /[A-Z]/.test(val), {
+      message: "Must contain at least one uppercase letter",
     })
-    .refine((p) => /[a-z]/.test(p), {
-      message: "Must contain a lowercase letter",
+    .refine((val) => /[a-z]/.test(val), {
+      message: "Must contain at least one lowercase letter",
     })
-    .refine((p) => /[0-9]/.test(p), { message: "Must contain a number" })
-    .refine((p) => /[!@#$%^&*()_\-+=[\]{};':"\\|,.<>/?]/.test(p), {
-      message: "Must contain a special character",
+    .refine((val) => /[0-9]/.test(val), {
+      message: "Must contain at least one number",
     }),
-});
+})
+
+export type LoginFields = z.infer<typeof loginSchema>
+export const loginSubmit: SubmitHandler<LoginFields> = async (data) => {
+  console.log("Waiting...");
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  console.log("Done waiting", data);
+};
+
