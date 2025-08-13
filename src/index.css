@@ -8,10 +8,7 @@
   --font-display: "Poppins", sans-serif;
   --shadow-3xl: 25px 0px 50px -20px rgba(0, 0, 0, 0.25),
     0 12px 50px -12px rgba(0, 0, 0, 0.25);
-    .large-icon {
-  --w-icon: 28px !important;
-  --h-icon: 28px !important;
-}
+   
 }
 
 

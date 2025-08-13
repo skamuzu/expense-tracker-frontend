@@ -102,7 +102,7 @@ const Hero = () => {
   return (
       <section className="relative md:bg-purple-200 w-full md:w-3/7 z-10 flex flex-col-reverse md:flex-col justify-end md:justify-between md:min-h-screen h-fit pb-4 items-center">
         <div className="bg-purple-600 w-40 h-40 rounded-3xl absolute -top-8 -left-2 z-0 shadow-3xl hidden md:block shadow-purple-600"></div>
-        <div className="bg-none w-50 h-50  hidden md:block border-15 border-yellow-500 shadow-3xl shadow-yellow-500 absolute top-1/3 -right-12 rounded-3xl">
+        <div className="bg-none w-50 h-50  hidden md:block border-15 border-purple-600 shadow-3xl shadow-purple-600 absolute top-1/3 -right-12 rounded-3xl">
           {" "}
         </div>
         <div className="bg-purple-600 w-40 h-40 shadow-3xl  hidden md:block shadow-purple-600 rounded-3xl absolute -bottom-8 -left-2 z-0"></div>
