@@ -18,6 +18,7 @@ import {
   SidebarMenuItem,
   SidebarHeader,
   SidebarFooter,
+  SidebarTrigger
 } from "@/components/ui/sidebar";
 
 const items = [
@@ -45,7 +46,7 @@ const items = [
 
 export function CustomSidebar() {
   return (
-    <Sidebar className="p-3 border-0">
+    <Sidebar className="p-3 border-0 ">
       <SidebarHeader className="font-bold text-lg mb-4 pl-4">
         Expense Tracker
       </SidebarHeader>
